@@ -69,13 +69,13 @@
         <form action="{{ route('products.update', $product)}}" method="POST">
         @csrf
         @method('PUT')
-        <label for="product">Product</label>
+        <label for="product">Producto</label>
         <input type="text" name="product" id="product" value="{{ $product->product }}" required>
-        <label for="price">Price</label>
+        <label for="price">Precio</label>
         <input type="number" name="price" id="price" value="{{ $product->price }}" required>
-        <label for="description">Description</label>
+        <label for="description">Descripción</label>
         <input type="text" name="description" id="description" value="{{ $product->description }}" required>
-        <button type="submit">Edit</button>
+        <button type="submit">Editar</button>
         <a href="{{ route('products.index')}}" >Volver</a>
     </form>
     </div>
