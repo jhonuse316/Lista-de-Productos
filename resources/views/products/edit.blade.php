@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: "Rubik", sans-serif;
-            background-color: white;
+            background-color: lightblue;
         }
         .edit-container{
             padding: 25px;
@@ -75,7 +75,7 @@
         <input type="number" name="price" id="price" value="{{ $product->price }}" required>
         <label for="description">Descripción</label>
         <input type="text" name="description" id="description" value="{{ $product->description }}" required>
-        <button type="submit">Editar</button>
+        <button type="submit">Guardar</button>
         <a href="{{ route('products.index')}}" >Volver</a>
     </form>
     </div>

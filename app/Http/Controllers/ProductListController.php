@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductListController extends Controller
 {
@@ -64,7 +65,7 @@ class ProductListController extends Controller
             'price' => 'required',
             'description' => 'required',
         ]);
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         $product->update($request->all());
         return redirect()->route('products.index');
     }
@@ -72,8 +73,9 @@ class ProductListController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(string $id)
     {
+        $product = Product::findOrFail($id);
         $product->delete();
         return redirect()->route('products.index');
     }
